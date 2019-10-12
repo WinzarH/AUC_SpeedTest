@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Rerun with much larger sample size | Area Under the Curve Speed Test</title>
+  <meta name="description" content="6 Rerun with much larger sample size | Area Under the Curve Speed Test" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Rerun with much larger sample size | Area Under the Curve Speed Test" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Rerun with much larger sample size | Area Under the Curve Speed Test" />
+  
+  
+  
+
+<meta name="author" content="Hume Winzar" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="run-the-simulation.html"/>
+<link rel="next" href="conclusions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="benchmarking-area-under-the-curve.html"><a href="benchmarking-area-under-the-curve.html"><i class="fa fa-check"></i><b>1</b> Benchmarking Area Under the Curve</a><ul>
+<li class="chapter" data-level="1.1" data-path="benchmarking-area-under-the-curve.html"><a href="benchmarking-area-under-the-curve.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="setup.html"><a href="setup.html#load-required-libraries"><i class="fa fa-check"></i><b>2.0.1</b> Load required libraries</a></li>
+<li class="chapter" data-level="2.1" data-path="setup.html"><a href="setup.html#functions-to-test"><i class="fa fa-check"></i><b>2.1</b> Functions to test</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="setup.html"><a href="setup.html#functions-are"><i class="fa fa-check"></i><b>2.1.1</b> Functions are:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="setup.html"><a href="setup.html#benchmark-all-of-the-functions"><i class="fa fa-check"></i><b>2.2</b> Benchmark all of the Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="charting-functions.html"><a href="charting-functions.html"><i class="fa fa-check"></i><b>3</b> Charting functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="charting-functions.html"><a href="charting-functions.html#function-to-visualise-the-data-distributions"><i class="fa fa-check"></i><b>3.1</b> Function to visualise the data distributions</a></li>
+<li class="chapter" data-level="3.2" data-path="charting-functions.html"><a href="charting-functions.html#function-to-plot-results-of-simulation"><i class="fa fa-check"></i><b>3.2</b> Function to plot results of simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="generate-some-artificial-data.html"><a href="generate-some-artificial-data.html"><i class="fa fa-check"></i><b>4</b> Generate some artificial data</a><ul>
+<li class="chapter" data-level="4.1" data-path="generate-some-artificial-data.html"><a href="generate-some-artificial-data.html#generating-data"><i class="fa fa-check"></i><b>4.1</b> Generating data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="run-the-simulation.html"><a href="run-the-simulation.html"><i class="fa fa-check"></i><b>5</b> Run the simulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="run-the-simulation.html"><a href="run-the-simulation.html#print-summary-results-and-visualise-benchmarks"><i class="fa fa-check"></i><b>5.1</b> Print summary results and Visualise benchmarks</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rerun-with-much-larger-sample-size.html"><a href="rerun-with-much-larger-sample-size.html"><i class="fa fa-check"></i><b>6</b> Rerun with much larger sample size</a></li>
+<li class="chapter" data-level="7" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>7</b> Conclusions</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Area Under the Curve Speed Test</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rerun-with-much-larger-sample-size" class="section level1">
+<h1><span class="header-section-number">6</span> Rerun with much larger sample size</h1>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">MyRows &lt;-<span class="st"> </span><span class="dv">5000</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="co"># set.seed(42)</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">alpha &lt;-<span class="st"> </span><span class="kw">MakeAlpha</span>()</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">beta &lt;-<span class="st"> </span><span class="kw">MakeBeta</span>()</a>
+<a class="sourceLine" id="cb21-7" data-line-number="7">nPairs &lt;-<span class="st"> </span><span class="kw">length</span>(alpha) <span class="op">*</span><span class="st"> </span><span class="kw">length</span>(beta)</a>
+<a class="sourceLine" id="cb21-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb21-9" data-line-number="9">PaGTb &lt;-<span class="st"> </span><span class="kw">MyAUC.function</span>()</a>
+<a class="sourceLine" id="cb21-10" data-line-number="10"><span class="kw">MyDistPlot</span>() </a></code></pre></div>
+<pre><code>## Warning: Removed 151 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="Benchmark_NotebookTrial_11Oct2019_files/figure-html/chunk-rerun-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">MyBenchmark.function</span>(<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="co"># print comparison benchmark tables</span></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="kw">print</span>(mbm, <span class="dt">unit =</span> <span class="st">&quot;ms&quot;</span>)</a></code></pre></div>
+<pre><code>## Unit: milliseconds
+##        expr        min          lq        mean      median           uq         max neval
+##   ForIfElse 793.065171 823.9356895 925.7742395 886.7762100 1016.9917365 1548.467938   100
+##  expandGrid 553.005521 715.7527615 813.9454650 786.6748370  881.1987195 1553.123448   100
+##          CJ 250.158225 353.3801590 411.5689376 382.2553935  470.7529270  730.667199   100
+##          DT 215.358374 235.5904665 327.9758740 328.6828560  405.5103620  894.038135   100
+##      Wilcox  12.712739  14.3506475  17.5151748  15.2682495   18.0886555   86.942199   100
+##   ModWilcox   1.220858   1.2636225   1.3996328   1.3400530    1.4385415    2.411884   100
+##     BaseAUC   0.154756   0.1896000   0.2250785   0.2085110    0.2236595    1.216941   100
+##         AUC   0.687628   0.7721415   1.0199485   0.8190785    0.9007500   11.277753   100
+##    cld
+##      e
+##     d 
+##    c  
+##   b   
+##  a    
+##  a    
+##  a    
+##  a</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">print</span>(mbm, <span class="dt">unit =</span> <span class="st">&quot;relative&quot;</span>)</a></code></pre></div>
+<pre><code>## Unit: relative
+##        expr         min          lq        mean      median          uq         max neval
+##   ForIfElse 5124.616629 4345.652371 4113.117338 4252.898936 4547.053608 1272.426468   100
+##  expandGrid 3573.402782 3775.067307 3616.273883 3772.821755 3939.911873 1276.252052   100
+##          CJ 1616.468667 1863.819404 1828.557396 1833.262483 2104.775013  600.413002   100
+##          DT 1391.599511 1242.565752 1457.162228 1576.333412 1813.070145  734.660214   100
+##      Wilcox   82.146986   75.689069   77.818075   73.225151   80.875865   71.443233   100
+##   ModWilcox    7.888922    6.664676    6.218421    6.426774    6.431837    1.981924   100
+##     BaseAUC    1.000000    1.000000    1.000000    1.000000    1.000000    1.000000   100
+##         AUC    4.443304    4.072476    4.531523    3.928227    4.027327    9.267296   100
+##    cld
+##      e
+##     d 
+##    c  
+##   b   
+##  a    
+##  a    
+##  a    
+##  a</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">MyPlot.function</span>() </a></code></pre></div>
+<p><img src="Benchmark_NotebookTrial_11Oct2019_files/figure-html/chunk-rerun-2.png" width="672" /></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="run-the-simulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

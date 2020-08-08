@@ -28,6 +28,20 @@ Eight alternative functions are benchmarked against each other and compared usin
 
 ## Generating data
 
-In this example, two non-normal data sets are compared, so it's unclear which should have higher probability of superiority. Group Alpha is more platykurtic (spread out), with many large negative and positive values, while group Beta is a $\chi$$^2$ distribution *(df=1)*, so highly skewed.
+In this example, two non-normal data sets are compared, so it's unclear which should have higher probability of superiority. Group Alpha is more platykurtic (spread out), with many large negative and positive values, while group Beta is a \chi^2 distribution *(df=1)*, so highly skewed.
 So the two distributions should look like this:
 ![density plots 1](/images/chunk-bigrerun-1.png)
+
+## Simulation with small sample sizes
+![violin plot small](/images/PrintResults-1.png)
+
+## Simulation with larger sample sizes
+![violin plot large](/images/chunk-rerun-2.png)
+
+## Simulation with very large sample sizes
+![violin plot larger](/images/chunk-bigrerun-2.png)
+
+# Conclusion
+
+Base AUC function is the consistent winner, except when sample size is unusually small.
+

@@ -28,7 +28,7 @@ Eight alternative functions are benchmarked against each other and compared usin
 
 ## Generating data
 
-In this example, two non-normal data sets are compared, so it's unclear which should have higher probability of superiority. Group Alpha is more platykurtic (spread out), with many large negative and positive values, while group Beta is a \chi distribution *(df=1)*, so highly skewed.
+In this example, two non-normal data sets are compared, so it's unclear which should have higher probability of superiority. Group Alpha is more platykurtic (spread out), with many large negative and positive values, while group Beta is a _chi-squared_ distribution *(df=1)*, so highly skewed.
 So the two distributions should look like this:
 ![density plots 1](/images/chunk-bigrerun-1.png)
 
